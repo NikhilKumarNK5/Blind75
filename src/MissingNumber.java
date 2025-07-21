@@ -76,6 +76,7 @@ public class MissingNumber {
         Return:
             expectedSum - actualSum = 6 - 4 = 2
     */
+    // the sum can overflow for large arrays
     // TC => O(N)
     public int missingNumberUsingSum(int[] nums) {
         int n = nums.length;
