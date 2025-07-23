@@ -57,6 +57,19 @@ public class MaximumSubarray {
             }
             maxSum = Math.max(maxSum, currSum); // finding the maxSum
         }
+
+        /*
+        for(int i = 0; i < n; i++) {
+            // can also be done using this
+            currSum += nums[i]; // add the element to find the currSum
+            maxSum = Math.max(maxSum, currSum); // finding the maxSum
+
+            // if currSum is less than 0, we can reset it to zero and begin our sum again
+            if(currSum < 0)
+                currSum = 0;
+        }
+        */
+
         return maxSum;
     }
 }
