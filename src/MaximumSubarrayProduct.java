@@ -121,4 +121,40 @@ public class MaximumSubarrayProduct {
 
         return maxProduct;
     }
+
+    // Approach 3: DP
+    // TC => O(N)
+    public int maxProductDP(int[] nums) {
+        // Initialize result with the minimum possible integer value
+        // It will eventually hold the maximum product of any subarray
+        int res = Integer.MIN_VALUE;
+
+        // First, set res to the maximum element in the array
+        // This helps handle cases where all elements are negative or zero
+        for (int ele : nums) {
+            res = Math.max(res, ele);
+        }
+
+        int currMax = 1; // Tracks the current maximum product ending at the current index
+        int currMin = 1; // Tracks the current minimum product ending at the current index (used for handling negatives)
+
+        for (int ele : nums) {
+            // temp stores current max before it gets overwritten
+            int temp = currMax * ele;
+
+            // Update currMax by considering:
+            // 1. current element alone (starting new subarray)
+            // 2. product of current element with previous max
+            // 3. product of current element with previous min (in case ele is negative)
+            currMax = Math.max(temp, Math.max(currMin * ele, ele));
+
+            // Similarly, update currMin
+            currMin = Math.min(temp, Math.min(currMin * ele, ele));
+
+            // Update global max product found so far
+            res = Math.max(res, currMax);
+        }
+
+        return res;
+    }
 }
