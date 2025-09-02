@@ -43,18 +43,18 @@ public class LinkedListCycle {
      */
     static class ListNode {
         private int val;
-        private ReverseLinkedList.ListNode next;
+        private ListNode next;
 
         public ListNode(int val) {
             this.val = val;
         }
 
-        public void setNext(int val, ReverseLinkedList.ListNode next) {
+        public void setNext(int val, ListNode next) {
             this.val = val;
             this.next = next;
         }
 
-        public ReverseLinkedList.ListNode getNext() {
+        public ListNode getNext() {
             return this.next;
         }
     }
