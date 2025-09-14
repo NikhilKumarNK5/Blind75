@@ -64,7 +64,7 @@ public class SerializeAndDeserializeBinaryTree {
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-        if(data == "")
+        if(data.equals(""))
             return null;
 
         Queue<TreeNode> queue = new LinkedList<>();
