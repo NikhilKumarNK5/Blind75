@@ -79,7 +79,7 @@ public class SerializeAndDeserializeBinaryTree {
                 parent.left = left;
                 queue.add(left);
             }
-            if(!values.equals("null")) {
+            if(!values[i].equals("null")) {
                 TreeNode right = new TreeNode(Integer.parseInt(values[i]));
                 parent.right = right;
                 queue.add(right);
